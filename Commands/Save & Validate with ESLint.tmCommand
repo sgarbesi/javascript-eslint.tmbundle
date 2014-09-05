@@ -28,9 +28,9 @@ fi
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
-	<string>html</string>
+	<string>text</string>
 	<key>outputLocation</key>
-	<string>newWindow</string>
+	<string>toolTip</string>
 	<key>scope</key>
 	<string>source.js</string>
 	<key>uuid</key>

@@ -387,6 +387,19 @@ def validate(quiet=False):
     template = template.replace('{{ EJS_TEMPLATE }}', json.dumps(content_ejs))
     template = template.replace('{{ CONTEXT }}', json.dumps(context))
 
+    # print(template)
+
+    # @sgarbesi Tooltips for Textmate
+    if context['errorCount'] == 0 and context['warningCount'] == 0:
+        print('Lint Free!')
+        return
+
+    template = '%s Errors / %s Warnings' % (context['errorCount'], context['warningCount'])
+    template = '%s\r\n---' % (template)
+
+    for issue in context['issues']:
+        template = '%s\r\n%s: L%s: %s' % (template, issue['code'], issue['line'], issue['reason'])
+
     print(template)
 
 
